@@ -1,0 +1,21 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local configuration and editor files
+.env
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated logs and runtime output
+*.log
+CodeAlpha-MusicGenAI/outputs/web_logs/
+
+# Generated ML artifacts (too large for regular GitHub storage)
+CodeAlpha-MusicGenAI/models/
+CodeAlpha-MusicGenAI/data/processed/
