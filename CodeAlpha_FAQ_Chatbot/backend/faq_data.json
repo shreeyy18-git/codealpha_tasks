@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "question": "What is the CodeAlpha Artificial Intelligence Internship?",
+    "answer": "The CodeAlpha Artificial Intelligence Internship is a virtual internship program designed to provide hands-on experience in AI and machine learning. Participants work on real-world projects, learn industry-relevant skills, and earn a certificate upon successful completion. The program is entirely remote and self-paced, making it accessible to students and professionals worldwide."
+  },
+  {
+    "id": 2,
+    "question": "How long does the CodeAlpha AI Internship last?",
+    "answer": "The CodeAlpha AI Internship typically lasts for 4 weeks. During this period, interns are expected to complete assigned tasks and projects within the given deadlines. The flexible schedule allows you to balance the internship alongside your regular studies or work commitments."
+  },
+  {
+    "id": 3,
+    "question": "Is the CodeAlpha AI Internship free?",
+    "answer": "Yes, the CodeAlpha Artificial Intelligence Internship is completely free of cost. There are no registration fees, hidden charges, or payment requirements at any stage of the program. CodeAlpha believes in providing equal learning opportunities to everyone interested in AI and technology."
+  },
+  {
+    "id": 4,
+    "question": "What are the prerequisites for joining the CodeAlpha AI Internship?",
+    "answer": "The prerequisites for the CodeAlpha AI Internship include a basic understanding of Python programming, familiarity with fundamental concepts of machine learning and artificial intelligence, and a willingness to learn and work on projects. Prior experience with libraries like NumPy, Pandas, and Scikit-learn is helpful but not mandatory."
+  },
+  {
+    "id": 5,
+    "question": "What tasks will I complete during the CodeAlpha AI Internship?",
+    "answer": "During the CodeAlpha AI Internship, you will complete tasks such as: TASK 1 - Building a simple chatbot or virtual assistant, TASK 2 - Creating an FAQ chatbot with NLP and TF-IDF matching, TASK 3 - Developing an image generation or recognition system, and TASK 4 - Building a recommendation system or sentiment analysis tool. Each task is designed to strengthen your practical AI skills."
+  },
+  {
+    "id": 6,
+    "question": "How do I submit my tasks for the CodeAlpha AI Internship?",
+    "answer": "To submit your tasks, you need to push your code to a GitHub repository and share the repository link through the CodeAlpha submission portal. Make sure your repository includes a README.md with project documentation, setup instructions, and screenshots or demos. Ensure all code is well-commented and organized before submission."
+  },
+  {
+    "id": 7,
+    "question": "What perks do I get from completing the CodeAlpha AI Internship?",
+    "answer": "Upon successful completion of the CodeAlpha AI Internship, you will receive: an official internship certificate from CodeAlpha, a LinkedIn recommendation letter, real-world project experience to showcase on your resume, networking opportunities with other AI enthusiasts, and guidance from industry mentors throughout the program."
+  },
+  {
+    "id": 8,
+    "question": "Will I receive a certificate after completing the CodeAlpha AI Internship?",
+    "answer": "Yes, you will receive an official internship certificate from CodeAlpha upon successful completion of all required tasks. The certificate validates your participation and the skills you acquired during the program. You can add this certificate to your LinkedIn profile and resume to showcase your AI expertise."
+  },
+  {
+    "id": 9,
+    "question": "Is the CodeAlpha AI Internship remote or in-person?",
+    "answer": "The CodeAlpha AI Internship is entirely remote and virtual. There is no physical attendance required. All communication, task submissions, and mentoring sessions happen online, allowing participants from anywhere in the world to join and benefit from the program."
+  },
+  {
+    "id": 10,
+    "question": "Can beginners apply for the CodeAlpha AI Internship?",
+    "answer": "Yes, beginners with a basic understanding of Python and a strong desire to learn are welcome to apply for the CodeAlpha AI Internship. The program is structured to guide participants from foundational concepts to more advanced AI techniques. However, having some prior exposure to programming and machine learning concepts will help you get the most out of the experience."
+  },
+  {
+    "id": 11,
+    "question": "What programming languages do I need to know for the CodeAlpha AI Internship?",
+    "answer": "Python is the primary programming language used throughout the CodeAlpha AI Internship. You should be comfortable with Python basics such as variables, loops, functions, and object-oriented programming. Knowledge of Python libraries like NumPy, Pandas, Scikit-learn, TensorFlow, or PyTorch is beneficial but not strictly required."
+  },
+  {
+    "id": 12,
+    "question": "How do I register for the CodeAlpha AI Internship?",
+    "answer": "To register for the CodeAlpha AI Internship, visit the official CodeAlpha website and fill out the registration form. You will need to provide your basic details including your name, email address, educational background, and area of interest. After registration, you will receive a confirmation email with further instructions and access to the internship resources."
+  },
+  {
+    "id": 13,
+    "question": "What is the deadline for task submission in the CodeAlpha AI Internship?",
+    "answer": "Each task in the CodeAlpha AI Internship has a specific deadline that will be communicated to you via email and the CodeAlpha platform. Typically, you are given one week to complete each task. It is important to submit all tasks before their respective deadlines to be eligible for the internship certificate."
+  },
+  {
+    "id": 14,
+    "question": "Can I use my own project ideas for the CodeAlpha AI Internship tasks?",
+    "answer": "While the CodeAlpha AI Internship provides specific task descriptions, you are encouraged to add your own creative touch and expand upon the base requirements. However, you must ensure that your project meets the core objectives and specifications outlined in each task description. Adding extra features and improvements is always appreciated and will make your submission stand out."
+  },
+  {
+    "id": 15,
+    "question": "Is there any mentorship provided during the CodeAlpha AI Internship?",
+    "answer": "Yes, CodeAlpha provides mentorship throughout the internship program. Experienced mentors and industry professionals are available to guide you through the tasks, answer your questions, and provide feedback on your work. Mentoring sessions are conducted online through the CodeAlpha community platform and communication channels."
+  },
+  {
+    "id": 16,
+    "question": "What is TASK 2 of the CodeAlpha AI Internship?",
+    "answer": "TASK 2 of the CodeAlpha AI Internship requires you to build an FAQ Chatbot. The chatbot must use NLP preprocessing (tokenization, cleaning, lemmatization), TF-IDF Vectorizer and Cosine Similarity for intent matching, and include an LLM fallback mechanism when similarity scores are below a threshold. The project should have a FastAPI backend and a modern chat UI frontend."
+  },
+  {
+    "id": 17,
+    "question": "What libraries and tools are used in the CodeAlpha AI Internship?",
+    "answer": "The CodeAlpha AI Internship involves working with various libraries and tools including: Python, FastAPI, SpaCy or NLTK for NLP, Scikit-learn for TF-IDF and similarity matching, OpenAI API for LLM integration, HTML/CSS/JavaScript for frontend development, and Git/GitHub for version control and submission. These tools cover the full stack of AI application development."
+  },
+  {
+    "id": 18,
+    "question": "Can I participate in the CodeAlpha AI Internship while working full-time?",
+    "answer": "Yes, the CodeAlpha AI Internship is designed to be flexible and self-paced, making it possible to participate alongside a full-time job or studies. The tasks are spread over 4 weeks, and you can work on them at your own pace as long as you meet the submission deadlines. Most interns spend approximately 5-10 hours per week on the program."
+  },
+  {
+    "id": 19,
+    "question": "How does the FAQ chatbot with TF-IDF and Cosine Similarity work?",
+    "answer": "The FAQ chatbot works by first preprocessing both the user's input and the FAQ questions using NLP techniques like tokenization and lemmatization. Then, it converts the text into numerical vectors using TF-IDF Vectorizer. Finally, it computes the Cosine Similarity between the user's question vector and each FAQ question vector to find the best match. If the similarity score is above a threshold, it returns the matched FAQ answer; otherwise, it falls back to an LLM for a generated response."
+  },
+  {
+    "id": 20,
+    "question": "What happens if I fail to complete a task in the CodeAlpha AI Internship?",
+    "answer": "If you fail to complete a task by the deadline, you may still have the opportunity to submit it late depending on CodeAlpha's policies. However, late submissions may affect your eligibility for certain perks like the LinkedIn recommendation letter. It is best to communicate with the CodeAlpha team if you anticipate any difficulties in meeting deadlines, as they are generally supportive and understanding."
+  },
+  {
+    "id": 21,
+    "question": "What is the LLM fallback mechanism in the FAQ chatbot?",
+    "answer": "The LLM fallback mechanism is a feature of the FAQ chatbot that activates when the Cosine Similarity score between the user's question and the best-matching FAQ falls below a threshold (typically 0.60). Instead of returning a potentially irrelevant FAQ answer, the chatbot forwards the user's question to an LLM API (like ChatGPT-4o) which generates a conversational and contextually appropriate response. This ensures the chatbot always provides helpful answers."
+  },
+  {
+    "id": 22,
+    "question": "What is the format of the certificate from CodeAlpha?",
+    "answer": "The CodeAlpha internship certificate is a digitally verifiable certificate that includes your name, the internship program name, duration, and a unique verification code. It can be downloaded as a PDF and shared on LinkedIn, added to your resume, or included in your portfolio. The certificate serves as proof of your practical experience in AI and machine learning."
+  },
+  {
+    "id": 23,
+    "question": "Do I need a GitHub account for the CodeAlpha AI Internship?",
+    "answer": "Yes, a GitHub account is required for the CodeAlpha AI Internship. All task submissions are made through GitHub repositories. You will need to create repositories for each task, push your code, and share the repository links on the CodeAlpha submission portal. Having a well-organized GitHub profile also helps showcase your work to potential employers."
+  },
+  {
+    "id": 24,
+    "question": "What is the Cosine Similarity threshold used in the FAQ chatbot?",
+    "answer": "The Cosine Similarity threshold used in the FAQ chatbot is typically set at 0.60 (60%). This means that if the similarity score between the user's question and the best-matching FAQ question is 0.60 or higher, the chatbot will return the matched FAQ answer. If the score is below 0.60, the chatbot will use the LLM fallback mechanism to generate a more appropriate conversational response."
+  },
+  {
+    "id": 25,
+    "question": "Can I collaborate with other interns during the CodeAlpha AI Internship?",
+    "answer": "While each intern is expected to submit their own individual work, CodeAlpha encourages collaboration and knowledge-sharing among interns through its community channels. You can discuss ideas, share resources, and help each other understand concepts. However, directly copying another intern's code or submitting someone else's work as your own is strictly prohibited and may result in disqualification."
+  }
+]
