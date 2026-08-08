@@ -1,0 +1,5 @@
+numpy
+torch
+music21
+fastapi
+uvicorn[standard]

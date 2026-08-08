@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicGenAI — AL-CODIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+
+    <!-- Ambient background layers -->
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient__orb ambient__orb--1"></div>
+      <div class="ambient__orb ambient__orb--2"></div>
+      <div class="ambient__orb ambient__orb--3"></div>
+      <canvas class="ambient__grid" id="gridCanvas"></canvas>
+    </div>
+
+    <div class="shell">
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <div class="brand-mark">
+            <span class="brand-mark__bars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+          </div>
+          <div>
+            <p class="brand-eyebrow">AL-CODIST</p>
+            <h1 class="brand-title">MusicGenAI</h1>
+          </div>
+        </div>
+
+        <!-- Mode Selector -->
+        <div class="sidebar__section">
+          <p class="sidebar__label">Dataset Mode</p>
+          <div class="mode-pills" id="modePills">
+            <button class="mode-pill" data-mode="hiphop">Hip-Hop</button>
+            <button class="mode-pill mode-pill--active" data-mode="mixed">Mixed</button>
+            <button class="mode-pill" data-mode="retro">Retro</button>
+          </div>
+        </div>
+
+        <!-- Status Block -->
+        <div class="sidebar__section">
+          <div class="sidebar__label-row">
+            <p class="sidebar__label">Project Status</p>
+            <button class="icon-btn" id="refreshStatusBtn" title="Refresh">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            </button>
+          </div>
+          <dl id="statusPanel" class="status-dl">
+            <div class="status-row"><dt>MIDI files</dt><dd class="skeleton">—</dd></div>
+            <div class="status-row"><dt>Preprocessed</dt><dd class="skeleton">—</dd></div>
+            <div class="status-row"><dt>Trained</dt><dd class="skeleton">—</dd></div>
+            <div class="status-row"><dt>Checkpoint</dt><dd class="skeleton mono">—</dd></div>
+          </dl>
+        </div>
+
+        <!-- Accent Picker -->
+        <div class="sidebar__section">
+          <p class="sidebar__label">Accent Colour</p>
+          <div class="swatch-row" id="swatchRow">
+            <button class="swatch swatch--orange swatch--active" data-accent="orange" title="Orange"></button>
+            <button class="swatch swatch--cyan" data-accent="cyan" title="Cyan"></button>
+          </div>
+        </div>
+
+        <div class="sidebar__spacer"></div>
+
+        <div class="sidebar__footer">
+          <div class="pulse-dot" id="serverStatus"></div>
+          <span id="serverLabel">Connecting…</span>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ── -->
+      <main class="main">
+
+        <!-- Top strip: Pipeline Actions -->
+        <section class="action-strip">
+          <div class="action-strip__header">
+            <h2 class="section-title">Pipeline</h2>
+            <p id="runHint" class="run-hint">Ready — select an action to begin.</p>
+          </div>
+          <div class="pipeline-grid">
+            <button class="pipeline-btn" data-action="preprocess">
+              <span class="pipeline-btn__icon">⟳</span>
+              <span class="pipeline-btn__label">Preprocess</span>
+              <span class="pipeline-btn__sub">Parse &amp; tokenise MIDI</span>
+            </button>
+            <button class="pipeline-btn" data-action="train">
+              <span class="pipeline-btn__icon">◈</span>
+              <span class="pipeline-btn__label">Train</span>
+              <span class="pipeline-btn__sub">Fit the language model</span>
+            </button>
+            <button class="pipeline-btn" data-action="generate">
+              <span class="pipeline-btn__icon">▶</span>
+              <span class="pipeline-btn__label">Generate</span>
+              <span class="pipeline-btn__sub">Sample new MIDI output</span>
+            </button>
+            <button class="pipeline-btn pipeline-btn--full" data-action="full_pipeline">
+              <span class="pipeline-btn__icon">⚡</span>
+              <span class="pipeline-btn__label">Full Pipeline</span>
+              <span class="pipeline-btn__sub">Preprocess → Train → Generate</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Options Row -->
+        <div class="options-row">
+
+          <!-- Train Options -->
+          <section class="card" id="trainCard">
+            <h3 class="card__title">
+              <span class="card__title-icon">◈</span> Train Options
+            </h3>
+            <div class="opts-grid">
+              <label class="opt-label full-span">
+                <span class="checkbox-wrap">
+                  <input id="trainResume" type="checkbox" />
+                  <span class="checkbox-custom"></span>
+                </span>
+                Resume from checkpoint
+              </label>
+              <label class="opt-label">
+                <span>Epochs</span>
+                <input id="trainEpochs" class="opt-input" type="number" min="1" step="1" placeholder="100" />
+              </label>
+              <label class="opt-label">
+                <span>Batch Size</span>
+                <input id="trainBatch" class="opt-input" type="number" min="1" step="1" placeholder="64" />
+              </label>
+              <label class="opt-label full-span">
+                <span>Learning Rate</span>
+                <input id="trainLr" class="opt-input" type="number" min="0.000001" step="any" placeholder="0.001" />
+              </label>
+            </div>
+          </section>
+
+          <!-- Generate Options -->
+          <section class="card" id="genCard">
+            <h3 class="card__title">
+              <span class="card__title-icon">▶</span> Generate Options
+            </h3>
+            <div class="opts-grid">
+              <label class="opt-label">
+                <span>Tokens</span>
+                <input id="genTokens" class="opt-input" type="number" min="1" step="1" placeholder="256" />
+              </label>
+              <label class="opt-label">
+                <span>Temperature</span>
+                <input id="genTemp" class="opt-input" type="number" min="0.01" step="0.01" placeholder="1.0" />
+              </label>
+              <label class="opt-label">
+                <span>Top-k</span>
+                <input id="genTopK" class="opt-input" type="number" min="0" step="1" placeholder="10" />
+              </label>
+              <label class="opt-label">
+                <span>Top-p</span>
+                <input id="genTopP" class="opt-input" type="number" min="0.01" max="1" step="0.01" placeholder="0.9" />
+              </label>
+              <label class="opt-label">
+                <span>BPM</span>
+                <input id="genBpm" class="opt-input" type="number" min="30" max="300" step="1" placeholder="90" />
+              </label>
+              <label class="opt-label">
+                <span>Seed Length</span>
+                <input id="genSeedLen" class="opt-input" type="number" min="1" step="1" placeholder="32" />
+              </label>
+              <label class="opt-label full-span">
+                <span>Seed MIDI Path <em>(optional)</em></span>
+                <input id="genSeedFile" class="opt-input" type="text" placeholder="/absolute/path/to/seed.mid" />
+              </label>
+              <label class="opt-label full-span">
+                <span>Output Filename <em>(optional)</em></span>
+                <input id="genOutputFilename" class="opt-input" type="text" placeholder="my_track.mid (blank = default naming)" />
+              </label>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Jobs + Logs Row -->
+        <div class="bottom-row">
+
+          <!-- Jobs Panel -->
+          <section class="card card--jobs">
+            <h3 class="card__title">Jobs <span id="jobCount" class="card__badge">0</span></h3>
+            <div id="jobsPanel" class="jobs-list">
+              <p class="empty-hint">No jobs yet.</p>
+            </div>
+          </section>
+
+          <!-- Logs Panel -->
+          <section class="card card--logs">
+            <div class="logs-header">
+              <h3 class="card__title">Live Logs</h3>
+              <p id="activeJobLabel" class="active-job-label">—</p>
+            </div>
+            <pre id="logsPanel" class="log-output">Select a job to view logs.</pre>
+          </section>
+
+        </div>
+
+        <!-- MIDI Player -->
+        <section class="card card--player">
+          <h3 class="card__title">
+            <span class="card__title-icon">♪</span> MIDI Player
+            <span class="player-badge">Generated Outputs</span>
+          </h3>
+          <div class="player-body">
+            <div class="player-files" id="playerFiles">
+              <p class="empty-hint">No generated MIDI files found.</p>
+            </div>
+            <div class="player-controls">
+              <div class="now-playing">
+                <div class="waveform" id="waveform" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <p class="now-playing__name" id="nowPlayingName">No file selected</p>
+              </div>
+              <div class="player-btns">
+                <button class="player-btn" id="playerPrev" title="Previous">&#9664;&#9664;</button>
+                <button class="player-btn player-btn--play" id="playerPlay" title="Play / Pause">&#9654;</button>
+                <button class="player-btn" id="playerNext" title="Next">&#9654;&#9654;</button>
+              </div>
+              <div class="player-meta" id="playerMeta">
+                <span>Use MIDI player instructions below to set up playback.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.49/build/Tone.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tonejs/midi@2.0.28/build/Midi.js" defer></script>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
