@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 streamlit
 deep-translator
 gtts
+=======
+streamlit
+deep-translator
+gtts
+>>>>>>> 767d4fe4fd49e129a8f58eedc3eddf932e98da9f

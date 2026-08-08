@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,3 +100,106 @@
     <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha FAQ Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon - CodeAlpha inspired -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <!-- ──────────────────────────────────────── -->
+    <!-- Main Chat Container                      -->
+    <!-- ──────────────────────────────────────── -->
+    <div class="chat-container">
+
+        <!-- ──────────────────────────────────── -->
+        <!-- Header                                -->
+        <!-- ──────────────────────────────────── -->
+        <header class="chat-header">
+            <div class="header-left">
+                <div class="bot-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.27A7 7 0 0 1 7.27 19H6a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 12 2z"/>
+                        <circle cx="9" cy="14" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="14" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="header-info">
+                    <h1>CodeAlpha FAQ Chatbot</h1>
+                    <span class="status-indicator">
+                        <span class="status-dot"></span>
+                        Online &middot; AI Internship Assistant
+                    </span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="clearChat" class="header-btn" title="Clear conversation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="m19 6-.867 12.142A2 2 0 0 1 16.138 20H7.862a2 2 0 0 1-1.995-1.858L5 6m5 0V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- ──────────────────────────────────── -->
+        <!-- Messages Area                         -->
+        <!-- ──────────────────────────────────── -->
+        <main class="chat-messages" id="chatMessages">
+
+            <!-- Welcome Message (shown on load) -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1.27A7 7 0 0 1 7.27 19H6a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 12 2z"/>
+                        <circle cx="9" cy="14" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="14" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h2>CodeAlpha AI Internship</h2>
+                <p>Ask me anything about the CodeAlpha Artificial Intelligence Internship program!</p>
+                <div class="suggestion-chips">
+                    <button class="chip" data-query="What is the CodeAlpha AI Internship?">What is the internship?</button>
+                    <button class="chip" data-query="How do I register for the CodeAlpha AI Internship?">How to register?</button>
+                    <button class="chip" data-query="What tasks will I complete during the internship?">What tasks are involved?</button>
+                    <button class="chip" data-query="What perks do I get from completing the internship?">What are the perks?</button>
+                    <button class="chip" data-query="Will I receive a certificate?">Certificate details</button>
+                    <button class="chip" data-query="How does the FAQ chatbot with TF-IDF and Cosine Similarity work?">How does the chatbot work?</button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ──────────────────────────────────── -->
+        <!-- Input Area                            -->
+        <!-- ──────────────────────────────────── -->
+        <footer class="chat-input-area">
+            <div class="input-wrapper">
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask about the CodeAlpha AI Internship..."
+                    rows="1"
+                    maxlength="1000"
+                ></textarea>
+                <button id="sendButton" class="send-btn" title="Send message" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <p class="disclaimer">Powered by NLP, TF-IDF &amp; LLM. Built for CodeAlpha TASK 2.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 767d4fe4fd49e129a8f58eedc3eddf932e98da9f
