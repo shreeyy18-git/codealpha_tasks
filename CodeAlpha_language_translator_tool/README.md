@@ -167,7 +167,7 @@ Gain hands-on experience in Python development
 
 ## 📌 Project Status
 ```
-✔ Completed as part of CodeAlpha Internship Program
+✔ Completed as part of CodeAlpha Internship Program TASK -1
 ```
 
 ## 👨‍💻 Author
